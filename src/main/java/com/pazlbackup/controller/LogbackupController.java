@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class LogbackupController {
     private final static Logger logger = LoggerFactory.getLogger(LogbackupController.class);
 
-    @RequestMapping("/")
+    @RequestMapping("/logbackup/eg")
     String home(){
-        return "Hello world";
+        logger.info("logback 访问hello");
+        logger.error("logback 访问hello");
+        return "Hello World!";
     }
 
 }
