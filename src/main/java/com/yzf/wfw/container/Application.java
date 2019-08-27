@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @ComponentScan(basePackages={"com.*"})
 public class Application {
-    @RequestMapping("/")
+    @RequestMapping("/weifuwu")
     String home(){
         return "Hello world";
     }
