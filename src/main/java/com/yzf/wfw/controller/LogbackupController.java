@@ -1,4 +1,4 @@
-package com.yzf.pazl.wfw.controller;
+package com.yzf.wfw.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
