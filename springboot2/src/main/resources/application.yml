@@ -1,5 +1,5 @@
 server:
-  port: 18082
+  port: 18090
 # 需要使用 redis 的话，放开这里
 spring:
   redis:
@@ -12,3 +12,11 @@ spring:
     url: jdbc:mysql://localhost:3306/db_oauth?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
     password: admin
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.jafe.springboot2.entity
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true

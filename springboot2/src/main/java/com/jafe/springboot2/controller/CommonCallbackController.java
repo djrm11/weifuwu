@@ -1,5 +1,7 @@
 package com.jafe.springboot2.controller;
 
+import com.jafe.springboot2.entity.SpringBoot2User;
+import com.jafe.springboot2.service.SpringBoot2UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -14,23 +16,23 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @Slf4j
 public class CommonCallbackController {
 
-//    withClient("aiqiyi")
-//    .authorizedGrantTypes("authorization_code","refresh_token", "implicit")
-//    .authorities("ROLE_CLIENT")
-//    .scopes("get_user_info","get_fanslist")
-//    .secret("secret")
-//    .redirectUris("http://localhost:8081/aiqiyi/qq/redirect")
-//    .autoApprove(true)
-//    .autoApprove("get_user_info")
-
     @Autowired
     RestTemplate restTemplate;
+
+    @Autowired
+    private SpringBoot2UserService springBoot2UserService;
+
+    @RequestMapping("user/findAll")
+    public List<SpringBoot2User> findAll(){
+        return springBoot2UserService.findAll();
+    }
 
     @RequestMapping("/client1/sqserver/redirect")
     public String getToken(@RequestParam String code){
