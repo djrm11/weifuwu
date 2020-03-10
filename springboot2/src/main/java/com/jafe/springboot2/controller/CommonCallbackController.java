@@ -18,7 +18,7 @@ import java.util.Map;
 
 @RestController
 @Slf4j
-public class QQCallbackController {
+public class CommonCallbackController {
 
 //    withClient("aiqiyi")
 //    .authorizedGrantTypes("authorization_code","refresh_token", "implicit")
