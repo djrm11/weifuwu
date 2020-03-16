@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("springBoot2AccountImpl")
+@Service
 public class SpringBoot2AccountImpl implements SpringBoot2AccountService {
 
     @Autowired
