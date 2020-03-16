@@ -7,10 +7,10 @@ import org.springframework.web.client.RestTemplate;
 
 
 @SpringBootApplication
-public class Springboot2App {
+public class Springboot2SecurityApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Springboot2App.class, args);
+        SpringApplication.run(Springboot2SecurityApp.class, args);
     }
 
     @Bean

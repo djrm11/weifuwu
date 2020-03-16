@@ -1,7 +1,9 @@
 package com.jafe.springboot2.controller;
 
 import com.jafe.springboot2.entity.SpringBoot2User;
+import com.jafe.springboot2.entity.account.SpringBoot2Account;
 import com.jafe.springboot2.service.SpringBoot2UserService;
+import com.jafe.springboot2.service.account.SpringBoot2AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -15,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @Slf4j
@@ -28,6 +28,13 @@ public class CommonCallbackController {
 
     @Autowired
     private SpringBoot2UserService springBoot2UserService;
+
+    @Autowired
+    private SpringBoot2AccountService springBoot2AccountService;
+    @RequestMapping("account/findAll")
+    public List<SpringBoot2Account> findAccountAll(){
+        return springBoot2AccountService.findAll();
+    }
 
     @RequestMapping("user/findAll")
     public List<SpringBoot2User> findAll(){
