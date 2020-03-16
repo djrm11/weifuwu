@@ -1,2 +1,7 @@
 springboot2security
-2版本+mybatis+logback+security
+
+springboot2.0
+mybatis
+logback
+spring security
+Druid
