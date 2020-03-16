@@ -10,6 +10,7 @@
     <modules>
         <module>springboot1</module>
         <module>springboot2</module>
+        <module>springboot2security</module>
     </modules>
     <packaging>pom</packaging>
 
