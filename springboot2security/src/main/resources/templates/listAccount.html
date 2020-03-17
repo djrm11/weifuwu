@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>列表</title>
+</head>
+<body>
+<h2>标准列表页面</h2>
+<h3>表单列表</h3>
+<table align='center' border='1' cellspacing='0'>
+    <tr>
+        <td>id</td>
+        <td>mobileNum</td>
+        <td>systemId</td>
+        <td>编辑</td>
+        <td>删除</td>
+    </tr>
+    <tr th:each="c:${page.list}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.mobileNum}"></td>
+        <td th:text="${c.systemId}"></td>
+        <td><a th:href="@{/editCategory(id=${c.id})}">编辑</a></td>
+        <td>删除</td>
+    </tr>
+</table>
+<br/>
+<div>
+    <a th:href="@{/account/listAccount(start=0)}">[首  页]</a>
+    <a th:href="@{/account/listAccount(start=${page.pageNum-1})}">[上一页]</a>
+    <a th:href="@{/account/listAccount(start=${page.pageNum+1})}">[下一页]</a>
+    <a th:href="@{/account/listAccount(start=${page.pages})}">[末  页]</a>
+</div>
+
+
+</body>
+</html>
