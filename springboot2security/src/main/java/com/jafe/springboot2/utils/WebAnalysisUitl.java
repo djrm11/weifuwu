@@ -18,7 +18,7 @@ public class WebAnalysisUitl {
         int len = 0;
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = new FileOutputStream("E:\\PAZL\\设备库文档\\海天注塑机的维修与保养tmp\\"+i+".png");
+            fileOutputStream = new FileOutputStream("E:\\PAZL\\设备库文档\\兄弟机床维修手册文件tmp\\"+i+".png");
             while ((len = inputStream.read(data)) != -1) {
                 fileOutputStream.write(data, 0, len);
 
