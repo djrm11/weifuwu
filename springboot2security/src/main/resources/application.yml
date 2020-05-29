@@ -2,6 +2,21 @@ server:
   port: 18092
 # 需要使用 redis 的话，放开这里
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    # 开启发送确认
+    publisher-confirms: true
+    # 开启发送失败退回
+    publisher-returns: true
+    # 开启ACK
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual
   redis:
     host: 127.0.0.1
     port: 6379

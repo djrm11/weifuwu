@@ -25,6 +25,11 @@
     <!--<artifactId>sqserver</artifactId>-->
 
     <dependencies>
+        <!-- 引入amqp依赖，它能很好的支持RabbitMQ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
