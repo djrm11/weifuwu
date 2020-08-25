@@ -1,4 +1,4 @@
-package com.yzf.wfw.container;
+package com.yzf.wfw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
