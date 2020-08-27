@@ -1,5 +1,6 @@
 package com.yzf.wfw.authentication;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler;
 
@@ -8,11 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+@Slf4j
 public class SecurityAuthenticationFailureHandler extends ExceptionMappingAuthenticationFailureHandler {
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException, ServletException {
+        log.error("login failed. ",e);
         if (request.getHeader("accept").contains("application/json")) {
             response.setContentType("application/json;charset=UTF-8");
             response.setStatus(401);
